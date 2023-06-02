@@ -17,6 +17,9 @@ public class AccountService implements UserDetailsService {
     private final AccountRepository accountRepository;
     private final PasswordEncoder passwordEncoder;
 
+    /**
+     * 여기서 반환하는 UserDetails가 곧 Authentication의 Principal이 된다.
+     */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Account account = accountRepository.findByUsername(username);

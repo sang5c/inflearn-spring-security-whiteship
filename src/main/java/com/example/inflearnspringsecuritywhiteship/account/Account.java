@@ -32,4 +32,8 @@ public class Account {
     public static Account create(String username, String password, String role, PasswordEncoder passwordEncoder) {
         return new Account(username, passwordEncoder.encode(password), role);
     }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 }
